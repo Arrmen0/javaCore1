@@ -4,18 +4,12 @@ public class ArrayExample {
 
     public static void main(String[] args) {
 
-        double[] numbers = new double[10];
+        int[] numbers = new int[10];
 
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
-        System.out.println(numbers[2]);
-        System.out.println(numbers[3]);
-        System.out.println(numbers[4]);
-        System.out.println(numbers[5]);
-        System.out.println(numbers[6]);
-        System.out.println(numbers[7]);
-        System.out.println(numbers[8]);
-        System.out.println(numbers[9]);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(numbers[i]);
+
+        }
 
 
     }
