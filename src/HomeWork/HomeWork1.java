@@ -17,9 +17,6 @@ public class HomeWork1 {
         if (x == y) {
             System.out.println(x == y);
         }
-
-
-
     }
 
 }
