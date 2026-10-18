@@ -24,7 +24,7 @@ public class ArrayUtil {
 
         //Խնդիր 5 — Գտնել ամենափոքր թիվը
         int min = (numbers[0]);
-        for (int i = 0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++)
 
             if (numbers[i] < min) {
                 min = numbers[i];
@@ -80,7 +80,7 @@ public class ArrayUtil {
                     //Bonus 2 — Հաշվել դրական և բացասական թվերը
                     int positiveCount = 0;
                     int negativeCount = 0;
-                    int zeroCount  = 0;
+                    int zeroCount = 0;
                     for (int j = 0; j < numbers.length; j++) {
                         if (numbers[j] > 0) {
                             positiveCount++;
@@ -98,6 +98,6 @@ public class ArrayUtil {
                 {
                 }
             }
-        }
     }
 }
+
