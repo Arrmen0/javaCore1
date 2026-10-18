@@ -95,8 +95,6 @@ public class ArrayUtil {
                     System.out.println("Negative numbers: " + negativeCount);
                     System.out.println("Zero numbers: " + zeroCount);
                 }
-                {
-                }
             }
     }
 }
