@@ -13,7 +13,7 @@ public class ArrayHomework {
                 count++;
             }
         }
-        System.out.println("Count of" + n + ": " + count);
+        System.out.println("Count of " + n + ": " + count);
 
         //Խնդիր 2 — Շրջել զանգվածի էլեմենտների հերթականությունը
         int[] numbers2 = {1, 5, 8, 3, 9, 2, 7, 4, 6, 10};
@@ -53,6 +53,7 @@ public class ArrayHomework {
             }
         }
         System.out.println("Repeated numbers count:" + count1);
+
 
         //Խնդիր 4 — Հաշվել ձայնավորների քանակը
         char[] chars = {'բ', 'ա', 'ր', 'և', 'ա', 'շ', 'խ', 'ա', 'ր', 'հ'};
