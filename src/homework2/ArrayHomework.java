@@ -68,9 +68,30 @@ public class ArrayHomework {
                 count2++;
             }
         }
+
         System.out.println("Vowels count:" + count2 );
+
+        //Bonus 1 — Գտնել երկրորդ ամենամեծ թիվը
+        int[] numbers4 = {4, 9, 2, 15, 7, 15, 3, 11, 6, 8};
+
+        int max = Integer.MIN_VALUE;
+
+        int secondMax = Integer.MIN_VALUE;
+
+        for (int i = 0; i < numbers4.length; i++) {
+
+            if (numbers4[i] > max) {
+                secondMax = max;
+                max = numbers4[i];
+            } else if (numbers4[i] < max && numbers4[i] > secondMax) {
+                secondMax = numbers4[i];
+            }
+        }
+        System.out.println("Second maximum: " + secondMax);
+
+        }
     }
-}
+
 
 
 
