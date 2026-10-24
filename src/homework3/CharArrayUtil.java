@@ -16,11 +16,8 @@ public class CharArrayUtil {
         }
 
         //Խնդիր 2 — Հաշվել սիմվոլների քանակը
-        int count = 0;
+        int count =  chars.length;
 
-        for (int i = 0; i < chars.length; i++) {
-            count++;
-        }
         System.out.println();
         System.out.println("Characters count: " + count);
         System.out.println("First character: " + chars[0]);
@@ -54,13 +51,13 @@ public class CharArrayUtil {
         //Խնդիր 5 — Հաշվել բաղաձայնների քանակը
         int consonantsCount = 0;
         for (int i = 0; i < chars.length; i++) {
-            if ((chars[i] >= 'a' && chars[i] <= 'z' ||
-                    chars[i] >= 'A' && chars[i] <= 'Z') &&
+            if (((chars[i] >= 'a' && chars[i] <= 'z') ||
+                    (chars[i] >= 'A' && chars[i] <= 'Z')) &&
                     chars[i] != 'a' && chars[i] != 'e' &&
                     chars[i] != 'i' && chars[i] != 'o' &&
-                    chars[i] != 'u' || chars[i] != 'A' &&
-                    chars[i] == 'E' || chars[i] == 'I' &&
-                    chars[i] == 'O' || chars[i] == 'U') {
+                    chars[i] != 'u' && chars[i] != 'A' &&
+                    chars[i] == 'E' && chars[i] == 'I' &&
+                    chars[i] == 'O' && chars[i] == 'U') {
 
                 consonantsCount++;
             }
@@ -174,6 +171,22 @@ public class CharArrayUtil {
             }
         }
         System.out.println("Arrays are equal: " + same);
+
+        //Bonus 3 — Հեռացնել կրկնվող սիմվոլները
+        char[] chars3 = {'a', 'b', 'a', 'c', 'b', 'd', 'a'};
+        for (int i = 0; i < chars3.length; i++) {
+            boolean found = false;
+            for (int j = 0; j < i; j++) {
+                if (chars3[i] == chars3[j]){
+                    found = true;
+                }
+            }
+            if (!found) {
+                System.out.print(" " + chars3[i]);
+            }
+        }
+
+
             }
         }
 
