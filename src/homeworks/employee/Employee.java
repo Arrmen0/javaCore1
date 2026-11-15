@@ -46,6 +46,7 @@ public class Employee {
     }
 
     public void setEmployeeID(String employeeID){
+        this.employeeID = employeeID;
 
     }
 

@@ -14,8 +14,16 @@ public class EmployeeDemo {
             System.out.println("Please input 2 for PRINT ALL EMPLOYEES");
             System.out.println("Please input 3 for SEARCH EMPLOYEE BY ID");
             System.out.println("Please input 4 for SEARCH EMPLOYEES BY COMPANY NAME");
+            System.out.println("Please input 5 for SEARCH EMPLOYEES BY MINIMUM SALARY");
+            System.out.println("Please input 6 for DELETE EMPLOYEE BY ID");
 
             System.out.println("input:" );
+
+            if (!scanner.hasNextInt()){
+                System.out.println("Invalid input! Please enter a number.");
+                scanner.nextLine();
+                continue;
+            }
             int command = scanner.nextInt();
             scanner.nextLine();
 

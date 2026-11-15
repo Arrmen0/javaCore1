@@ -47,7 +47,7 @@ public class EmployeeStorage {
     //4. Որոնում ընկերության անունով
     public void searchByCompany(String company){
          if (size == 0){
-             System.out.println("No employess found for!");
+             System.out.println("No employess found for storage!");
              return;
          }
          boolean found  = false;
@@ -83,7 +83,7 @@ public class EmployeeStorage {
 
             if (employees[i].getEmployeeID().equals(employeeID)){
 
-                for (int j = 0; j < size - 1; j++) {
+                for (int j = i; j < size - 1; j++) {
                     employees[j] = employees[j + 1];
                 }
                 employees[size - 1]  = null;
