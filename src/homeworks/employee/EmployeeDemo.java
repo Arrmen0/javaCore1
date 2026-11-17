@@ -24,6 +24,7 @@ public class EmployeeDemo {
             System.out.println("Please input 10 for PRINT EMPLOYEE COMPANY");
             System.out.println("Please input 11 for SEARCH BY MINIMUM SALARY");
             System.out.println("Please input 12 for DELETE EMPLOYEE");
+            System.out.println("Please input 13 for COUNT EMPLOYEES BY COMPANY");
 
             System.out.println("input:" );
 
@@ -54,10 +55,10 @@ public class EmployeeDemo {
                     scanner.nextLine();
 
                     System.out.println("Please input employee position:");
-                    String companyId = scanner.nextLine();
+                    String position = scanner.nextLine();
 
                     System.out.println("Please input company ID:");
-                    String position = scanner.nextLine();
+                    String companyId = scanner.nextLine();
 
                     Company company = companyStorage.getById(companyId);
 
@@ -151,13 +152,13 @@ public class EmployeeDemo {
 
                 }
                 case 9: {
-                    System.out.println("Please input employe ID:");
+                    System.out.println("Please input employee ID:");
                     String id = scanner.nextLine();
 
                     Employee emp = employeeStorage.searchById(id);
 
                     if (emp == null) {
-                        System.out.println("Employee nnot found!");
+                        System.out.println("Employee not found!");
                         break;
                     }
 
@@ -221,7 +222,22 @@ public class EmployeeDemo {
                     System.out.println("Invalid command! Please try again");
 
                     break;
+
+                case 13:
+                    System.out.println("Please input company Id:");
+                    String countCompanyId = scanner.nextLine();
+
+                    Company countCompany = companyStorage.getById(countCompanyId);
+
+                    if (countCompany == null){
+                        System.out.println("Company not found!");
+                    }else {
+                        int count = employeeStorage.countEmployeesByCompany(countCompanyId);
+                        System.out.println("Number of employees in " + countCompany.getName() + ": " + count);
+                    }
+                    break;
             }
+
         }
     }
 }
