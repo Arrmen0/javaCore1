@@ -8,7 +8,7 @@ public class Employee {
     private String surname;
     private String employeeID;
     private int salary;
-    private String company;
+    private Company company;
     private String position;
 
     public Employee() {
@@ -16,7 +16,7 @@ public class Employee {
 
     public Employee(String name, String surname,
                     String employeeID, int salary,
-                    String company, String position) {
+                    Company company, String position) {
 
         this.name = name;
         this.surname = surname;
@@ -58,11 +58,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return company;
     }
 
-    public void setCompany(String company){
+    public void setCompany(Company company){
         this.company = company;
     }
 

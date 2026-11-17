@@ -94,4 +94,19 @@ public class EmployeeStorage {
         }
         System.out.println("Employee with ID " + employeeID + " not found!");
     }
+    public  void printByCompanyId(String companyId){
+    boolean found = false;
+
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getCompany() !=null && employees[i].getCompany().equals(companyId)){
+                System.out.println(employees[i]);
+                found = true;
+            }
+        }
+        if (!found){
+            System.out.println("No employees found for this company!");
+        }
+    }
 }
+
+
