@@ -1,7 +1,6 @@
 package homeworks.employee;
 
 import java.util.Scanner;
-import java.util.concurrent.Callable;
 
 public class EmployeeDemo {
 
@@ -23,6 +22,8 @@ public class EmployeeDemo {
             System.out.println("Please input 8 for PRINT EMPLOYEES BY COMPANY ID");
             System.out.println("Please input 9 for  CHANGE EMPLOYEE COMPANY");
             System.out.println("Please input 10 for PRINT EMPLOYEE COMPANY");
+            System.out.println("Please input 11 for SEARCH BY MINIMUM SALARY");
+            System.out.println("Please input 12 for DELETE EMPLOYEE");
 
             System.out.println("input:" );
 
@@ -52,16 +53,17 @@ public class EmployeeDemo {
                     int salary = scanner.nextInt();
                     scanner.nextLine();
 
-                    System.out.println("Please input company ID:");
+                    System.out.println("Please input employee position:");
                     String companyId = scanner.nextLine();
 
-                    System.out.println("Please input employee position:");
+                    System.out.println("Please input company ID:");
                     String position = scanner.nextLine();
 
                     Company company = companyStorage.getById(companyId);
 
                     if (company == null) {
                         System.out.println("Company with ID " + companyId + " not found.");
+                        System.out.println("Please add the company first.");
                         break;
                     }
 
@@ -83,7 +85,7 @@ public class EmployeeDemo {
                         System.out.println("Employee found:");
                         System.out.println(result);
                     } else {
-                        System.out.println("Employee with ID " + searchID + "not found:");
+                        System.out.println("Employee with ID " + searchID + "not found.");
                     }
                     break;
 
@@ -110,6 +112,7 @@ public class EmployeeDemo {
                     Company company1 = new Company(newCompanyId, newCompanyName, industry, country);
 
                     companyStorage.add(company1);
+                    break;
 
                 case 6:
                     companyStorage.printAll();
@@ -136,9 +139,9 @@ public class EmployeeDemo {
 
                     Company company2 = companyStorage.getById(companyIdForEmployees);
 
-                    if (company2 == null){
+                    if (company2 == null) {
                         System.out.println("Company not found.");
-                    }else{
+                    } else {
                         System.out.println("Company: " + company2.getName());
                         System.out.println("Employees:");
                         employeeStorage.printByCompanyId(companyIdForEmployees);
@@ -147,6 +150,57 @@ public class EmployeeDemo {
                     break;
 
                 }
+                case 9: {
+                    System.out.println("Please input employe ID:");
+                    String id = scanner.nextLine();
+
+                    Employee emp = employeeStorage.searchById(id);
+
+                    if (emp == null) {
+                        System.out.println("Employee nnot found!");
+                        break;
+                    }
+
+                    System.out.println("Current company:" + emp.getCompany().getName());
+
+                    System.out.println("Please input new company ID:");
+                    String newId = scanner.nextLine();
+
+                    Company newCompany = companyStorage.getById(newId);
+
+                    if (newCompany == null) {
+                        System.out.println("Company not found!");
+                    } else {
+                        emp.setCompany(newCompany);
+                        System.out.println("Employee company successfully change!");
+                        System.out.println("New company:" + newCompany.getName());
+                    }
+                    break;
+                }
+                case 10:{
+                    System.out.println("Please input employee ID:");
+                    String Id = scanner.nextLine();
+
+                    Employee emp = employeeStorage.searchById(Id);
+
+                    if (emp == null) {
+                        System.out.println("Employee not fonud!");
+                    } else {
+                        System.out.println("Employee:" + emp.getName() + " " + emp.getSurname());
+
+                        System.out.println("Company information:");
+
+                        System.out.println("ID:" + emp.getCompany().getCompanyId());
+
+                        System.out.println("Name:" + emp.getCompany().getName());
+
+                        System.out.println("Industry:" + emp.getCompany().getIndustry());
+
+                        System.out.println("Country:" + emp.getCompany().getCountry());
+                    }
+                    break;
+            }
+
                 case 11:
                     System.out.println("Please input minimum salary:");
                     int minSalary = scanner.nextInt();

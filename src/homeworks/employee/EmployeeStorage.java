@@ -45,20 +45,16 @@ public class EmployeeStorage {
         return null;
     }
     //4. Որոնում ընկերության անունով
-    public void searchByCompany(String company){
-         if (size == 0){
-             System.out.println("No employess found for storage!");
-             return;
-         }
+    public void searchByCompany(String companyName){
          boolean found  = false;
         for (int i = 0; i < size; i++) {
-            if (employees[i].getCompany().equals(company)){
+            if (employees[i].getCompany() != null && employees[i].getCompany().getName().equals(companyName)){
                 System.out.println(employees[i]);
                 found = true;
             }
         }
         if (!found){
-            System.out.println("No employees found for company " + company);
+            System.out.println("No employees found company for company " + companyName);
         }
     }
     //Bonus 2 — Որոնել աշխատակիցներին ըստ աշխատավարձի
@@ -98,7 +94,7 @@ public class EmployeeStorage {
     boolean found = false;
 
         for (int i = 0; i < size; i++) {
-            if (employees[i].getCompany() !=null && employees[i].getCompany().equals(companyId)){
+            if (employees[i].getCompany() !=null && employees[i].getCompany().getCompanyId().equals(companyId)){
                 System.out.println(employees[i]);
                 found = true;
             }
